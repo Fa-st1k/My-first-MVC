@@ -1,0 +1,17 @@
+# Представление (View)
+def display_menu():
+    print("1. Посмотреть все товары")
+    print("2. Добавить товар")
+    print("3. Удалить товар")
+    print("4. Выйти")
+
+def display_all_shoes():    
+    print("\nОбувной инвентарь:")
+    for i, shoe in enumerate(shoe_inventory):        
+        print(f"{i+1}. {shoe['brand']} {shoe['model']}, Размер: {shoe['size']}")
+
+def display_success(message):    
+    print(f"\nУспешно: {message}")
+
+def display_error(message):    
+    print(f"\nОшибка: {message}")
