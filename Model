@@ -1,0 +1,41 @@
+from Model import Action_selection, go_to_order_1, payment_1, cart_1, editing_cart_1, a
+
+if Action_selection == 1:
+    go_to_order_1("go_to_order")
+elif Action_selection == 2:
+    payment_1("payment")
+elif Action_selection == 3:
+    cart_1("cart")
+elif Action_selection == 4:
+    editing_cart_1("editing_cart")
+elif Action_selection == 5:
+    a()
+
+#    controller.pyfrom model import add_shoe, remove_shoe, get_all_shoes
+from view import display_menu, display_all_shoes, display_success, display_error
+def main():
+    while True:
+        display_menu()
+        choice = input("\nВыберите действие (1-4): ")
+        if choice == "1":
+            display_all_shoes(get_all_shoes())
+        elif choice == "2":
+            brand = input("Введите бренд обуви: ")
+            model = input("Введите модель обуви: ")
+            size = input("Введите размер обуви: ")
+            add_shoe(brand, model, size)
+            display_success("Обувь успешно добавлена.")
+        elif choice == "3":
+            index = int(input("Введите номер обуви для удаления: ")) - 1
+            removed_shoe = remove_shoe(index)
+            if removed_shoe:
+                display_success(f"Обувь {removed_shoe['brand']} {removed_shoe['model']} удалена.")
+            else:
+                display_error("Неверный номер обуви.")
+        elif choice == "4":
+            print("Выход из программы.")
+            break
+        else:
+            display_error("Неверный выбор. Пожалуйста, выберите от 1 до 4.")
+if name == "main":
+    main()
