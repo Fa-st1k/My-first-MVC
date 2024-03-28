@@ -1,0 +1,13 @@
+All_workers = []
+
+def add_employee(FIO, age, weight):   
+    worker = {"FIO": FIO, "age": age, "weight": weight}
+    All_workers.append(worker)
+def removing_employees(index):
+    if 0 <= index < len(All_workers):        
+        removing_employees = All_workers.pop(index)
+        return removing_employees   
+    else:
+        return None
+def get_all_shoes():
+    return All_workers
